@@ -31,9 +31,12 @@ export class SchedulerService {
   }
 
   stopScheduler(pid: number) {
-    const job = this.schedulerRegistry?.getCronJob(pid.toString());
+    const doesExist = this.schedulerRegistry.doesExist('cron', pid.toString());
+    if (!doesExist) return;
+
+    const job = this.schedulerRegistry.getCronJob(pid.toString());
     if (job) {
-      job.stop();
+      job?.stop();
       this.schedulerRegistry.deleteCronJob(pid.toString());
     }
   }

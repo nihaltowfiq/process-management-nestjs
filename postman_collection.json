@@ -1,104 +1,82 @@
 {
-	"info": {
-		"_postman_id": "dfeaef19-b568-4251-95da-2ab62845c005",
-		"name": "process-management",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "32574062"
-	},
-	"item": [
-		{
-			"name": "Create Process",
-			"request": {
-				"method": "POST",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5000/api/create-process",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"create-process"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get All Process",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5000/api/get-all",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"get-all"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Get Single Process",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5000/api/get-single/:pid",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"get-single",
-						":pid"
-					],
-					"variable": [
-						{
-							"key": "pid",
-							"value": "63602819"
-						}
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "Delete Process",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:5000/api/delete-process/:pid",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "5000",
-					"path": [
-						"api",
-						"delete-process",
-						":pid"
-					],
-					"variable": [
-						{
-							"key": "pid",
-							"value": ""
-						}
-					]
-				}
-			},
-			"response": []
-		}
-	]
+  "info": {
+    "_postman_id": "dfeaef19-b568-4251-95da-2ab62845c005",
+    "name": "process-management",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "32574062"
+  },
+  "item": [
+    {
+      "name": "Create Process",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/v1/api/create-process",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "create-process"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get All Process",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/v1/api/get-all",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "get-all"]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Get Single Process",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/v1/api/get-single/:pid",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "get-single", ":pid"],
+          "variable": [
+            {
+              "key": "pid",
+              "value": "63602819"
+            }
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "Delete Process",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "http://localhost:5000/v1/api/delete-process/:pid",
+          "protocol": "http",
+          "host": ["localhost"],
+          "port": "5000",
+          "path": ["api", "delete-process", ":pid"],
+          "variable": [
+            {
+              "key": "pid",
+              "value": ""
+            }
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
 }

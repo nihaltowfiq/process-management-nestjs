@@ -1,4 +1,4 @@
-import { Injectable } from '@nestjs/common';
+import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Process } from './process.schema';
 import { Model } from 'mongoose';
@@ -25,20 +25,22 @@ export class ProcessService {
   }
 
   async findAll(): Promise<Process[]> {
-    const data = await this.processModel.find(
-      {},
-      { pid: 1, creation_time: 1, name: 1, _id: 0 },
-    );
+    const data = await this.processModel.find({}, { _id: 0, __v: 0 });
     return data;
   }
 
   async findOne(pid: number): Promise<Process> {
-    const data = await this.processModel.findOne({ pid }, { _id: 0, logs: 1 });
+    const data = await this.processModel.findOne({ pid }, { _id: 0, __v: 0 });
+
+    if (!data) throw new NotFoundException('Process not found');
+
     return data;
   }
 
   async delete(pid: number): Promise<Process> {
     const data = await this.processModel.findOneAndDelete({ pid });
+    if (!data) throw new NotFoundException('Process not found');
+
     this.schedulerService.stopScheduler(pid);
     return data;
   }

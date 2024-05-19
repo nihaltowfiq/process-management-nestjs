@@ -3,7 +3,7 @@ import { HydratedDocument } from 'mongoose';
 
 export type ProcessDocument = HydratedDocument<Process>;
 
-@Schema()
+@Schema({ timestamps: true })
 export class Process {
   @Prop({ required: true, type: String })
   name: number;

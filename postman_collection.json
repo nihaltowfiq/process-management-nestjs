@@ -11,12 +11,21 @@
       "request": {
         "method": "POST",
         "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"name\": \"Name\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
         "url": {
           "raw": "http://localhost:5000/v1/api/create-process",
           "protocol": "http",
           "host": ["localhost"],
           "port": "5000",
-          "path": ["api", "create-process"]
+          "path": ["v1", "api", "create-process"]
         }
       },
       "response": []
@@ -31,7 +40,7 @@
           "protocol": "http",
           "host": ["localhost"],
           "port": "5000",
-          "path": ["api", "get-all"]
+          "path": ["v1", "api", "get-all"]
         }
       },
       "response": []
@@ -46,11 +55,11 @@
           "protocol": "http",
           "host": ["localhost"],
           "port": "5000",
-          "path": ["api", "get-single", ":pid"],
+          "path": ["v1", "api", "get-single", ":pid"],
           "variable": [
             {
               "key": "pid",
-              "value": "63602819"
+              "value": "17839190"
             }
           ]
         }
@@ -67,11 +76,11 @@
           "protocol": "http",
           "host": ["localhost"],
           "port": "5000",
-          "path": ["api", "delete-process", ":pid"],
+          "path": ["v1", "api", "delete-process", ":pid"],
           "variable": [
             {
               "key": "pid",
-              "value": ""
+              "value": "55827453"
             }
           ]
         }
